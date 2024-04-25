@@ -1,0 +1,20 @@
+The command I have used on setting up EC2 (to install sysbench):
+sudo yum -y install git       
+sudo yum -y install make automake libtool pkgconfig libaio-devel        
+sudo yum -y install mariadb105-devel postgresql-devel openssl-devel    
+cd /home/ec2-user       
+git clone https://github.com/akopytov/sysbench.git --branch 1.0.20    
+cd sysbench        
+./autogen.sh  
+./configure --with-pgsql
+make -j  
+sudo make install
+sysbench --version  #(Verify the sysbench successfully installed)
+
+
+
+Useless, but I typed the following commands:
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+sudo yum -y update
+sudo yum -y install mysql-community-devel mysql-community-client mysql-community-common

@@ -1,0 +1,101 @@
+# This are to obtain the libmysqlclient.so.21 environment variable so that the HammerDB can run mysql
+sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm 
+sudo dnf install mysql80-community-release-el9-1.noarch.rpm -y
+sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
+sudo yum install mysql-server
+sudo yum install mysql-devel
+
+
+
+# Install HammerDB:
+wget https://github.com/TPC-Council/HammerDB/releases/download/v4.10/HammerDB-4.10-Linux.tar.gz
+tar -xzvf HammerDB-4.10-Linux.tar.gz
+cd HammerDB-4.4
+#launch HammerDB cli
+./hammerdbcli 
+
+
+# Launch HammerDB WebService (GUI for viewing benchmark result)
+cd /home/ec2-user/HammerDB-4.10 # the path where the HammerDB is installed
+./hammerdbcliws # launch hammerdb webservice  
+# To access the hammerdb webservice, type "[ec2-instance:ip]:8080" in the browser
+# You will then able to view the job by ID, 
+# click "result", you are able to see the chart showing the NOPM and TPM
+# click "result data" for actual NOPM and TPM number
+
+
+# Steps for running HammerDB TPROC-C tbenchmark test on MySQL:
+dbset db mysql
+diset connection mysql_host database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com
+diset connection mysql_port 3306
+diset tpcc mysql_user admin
+diset tpcc mysql_pass Passw0rd123
+diset tpcc mysql_dbase hmtest
+diset tpcc mysql_count_ware 10
+diset tpcc mysql_num_vu 8
+diset tpcc mysql_rampup 2
+diset tpcc mysql_duration 2
+diset tpcc mysql_total_iterations 1000000
+
+buildschema
+vustatus
+vurun
+vudestroy
+
+# Steps for running HammerDB TPROC-C tbenchmark test on AuroraMySQL:
+dbset db mysql
+diset connection mysql_host database-auroramysql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com
+diset connection mysql_port 3306
+diset tpcc mysql_user admin
+diset tpcc mysql_pass Passw0rd123
+diset tpcc mysql_dbase hmtest
+diset tpcc mysql_count_ware 10
+diset tpcc mysql_num_vu 8
+diset tpcc mysql_rampup 2
+diset tpcc mysql_duration 2
+diset tpcc mysql_total_iterations 1000000
+
+buildschema
+vustatus
+vurun
+vudestroy
+
+
+
+# Steps for running HammerDB TPROC-C tbenchmark test on PostgreSQL:
+dbset db pg
+diset connection pg_host database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com
+diset connection pg_port 5432
+diset tpcc pg_user postgres
+diset tpcc pg_superuserpass Passw0rd123
+diset tpcc pg_pass Passw0rd123
+diset tpcc pg_dbase hmtest
+diset tpcc pg_count_ware 10
+diset tpcc pg_num_vu 8
+diset tpcc pg_rampup 2
+diset tpcc pg_duration 2
+diset tpcc pg_total_iterations 1000000
+
+buildschema
+vustatus
+vurun
+vudestroy
+
+# Steps for running HammerDB TPROC-C tbenchmark test on AuroraPostgreSQL:
+dbset db pg
+diset connection pg_host database-aurorapostgresql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com
+diset connection pg_port 5432
+diset tpcc pg_user postgres
+diset tpcc pg_superuserpass Passw0rd123
+diset tpcc pg_pass Passw0rd123
+diset tpcc pg_dbase hmtest
+diset tpcc pg_count_ware 10
+diset tpcc pg_num_vu 8
+diset tpcc pg_rampup 2
+diset tpcc pg_duration 2
+diset tpcc pg_total_iterations 1000000
+
+buildschema
+vustatus
+vurun
+vudestroy

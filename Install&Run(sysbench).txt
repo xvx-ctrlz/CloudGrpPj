@@ -1,0 +1,147 @@
+# The command I have used on setting up EC2 (to install sysbench):
+sudo yum -y install git       
+sudo yum -y install make automake libtool pkgconfig libaio-devel        
+sudo yum -y install mariadb105-devel postgresql-devel openssl-devel    
+cd /home/ec2-user       
+git clone https://github.com/akopytov/sysbench.git --branch 1.0.20    
+cd sysbench        
+./autogen.sh  
+./configure --with-pgsql
+make -j  
+sudo make install
+sysbench --version  #(Verify the sysbench successfully installed)
+
+
+Run on MySQL:
+
+# To access your database using docker 
+# docker run -it --rm mysql mysql -h <mysql-host> -u <mysql-user> -p -P <mysql-port>
+docker run -it --rm mysql mysql -h database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com -u admin -p -P 3306
+docker run -it --rm mysql mysql -h database-auroramysql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com -u admin -p -P 3306
+docker run -it --rm postgres psql -h database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com -U postgres -d postgres
+docker run -it --rm postgres psql -h database-aurorapostgresql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com -U postgres -d postgres
+# enter password
+
+# After accessing to your database, create table for sysbench and HammerDB benchmark test
+CREATE DATABASE sbtest;
+CREATE DATABASE hmtest;
+
+# Running sysbench benchmark on MySQL
+sysbench /usr/local/share/sysbench/oltp_read_write.lua \
+--mysql-host=database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com \
+--mysql-port=3306 \
+--mysql-user=admin \
+--mysql-password=Passw0rd123 \
+--mysql-db=sbtest \
+--db-driver=mysql \
+--tables=10 \
+--table_size=10000 \
+--threads=8 \
+--time=120 \
+--report-interval=10 \
+prepare
+
+# Type the followings to show the benchmark result
+sysbench /usr/local/share/sysbench/oltp_read_write.lua \
+--mysql-host=database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com \
+--mysql-port=3306 \
+--mysql-user=admin \
+--mysql-password=Passw0rd123 \
+--mysql-db=sbtest \
+--db-driver=mysql \
+--tables=10 \
+--table_size=10000 \
+--threads=8 \
+--time=120 \
+--report-interval=10 \
+run
+
+# Running sysbench benchmark on Aurora MySQL
+sysbench /usr/local/share/sysbench/oltp_read_write.lua \
+--mysql-host=database-auroramysql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com \
+--mysql-port=3306 \
+--mysql-user=admin \
+--mysql-password=Passw0rd123 \
+--mysql-db=sbtest \
+--db-driver=mysql \
+--tables=10 \
+--table_size=10000 \
+--threads=8 \
+--time=120 \
+--report-interval=10 \
+prepare
+
+# Type the followings to show the benchmark result
+sysbench /usr/local/share/sysbench/oltp_read_write.lua \
+--mysql-host=database-auroramysql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com \
+--mysql-port=3306 \
+--mysql-user=admin \
+--mysql-password=Passw0rd123 \
+--mysql-db=sbtest \
+--db-driver=mysql \
+--tables=10 \
+--table_size=10000 \
+--threads=8 \
+--time=120 \
+--report-interval=10 \
+run 
+
+# Running sysbench benchmark on PostgreSQL:
+sysbench /usr/local/share/sysbench/oltp_read_write.lua \
+--pgsql-host=database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com \
+--pgsql-port=5432 \
+--pgsql-user=postgres \
+--pgsql-password=Passw0rd123 \
+--pgsql-db=sbtest \
+--db-driver=pgsql \
+--tables=10 \
+--table-size=10000 \
+--threads=8 \
+--time=120 \
+--report-interval=10 \
+prepare
+
+# Type the followings to show the benchmark result
+sysbench /usr/local/share/sysbench/oltp_read_write.lua \
+--pgsql-host=database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com \
+--pgsql-port=5432 \
+--pgsql-user=postgres \
+--pgsql-password=Passw0rd123 \
+--pgsql-db=sbtest \
+--db-driver=pgsql \
+--tables=10 \
+--table-size=10000 \
+--threads=8 \
+--time=120 \
+--report-interval=10 \
+run
+
+# Running sysbench benchmark on Aurora PostgreSQL:
+sysbench /usr/local/share/sysbench/oltp_read_write.lua \
+--pgsql-host=database-aurorapostgresql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com \
+--pgsql-port=5432 \
+--pgsql-user=postgres \
+--pgsql-password=Passw0rd123 \
+--pgsql-db=sbtest \
+--db-driver=pgsql \
+--tables=10 \
+--table-size=10000 \
+--threads=8 \
+--time=120 \
+--report-interval=10 \
+prepare
+
+# Type the followings to show the benchmark result
+sysbench /usr/local/share/sysbench/oltp_read_write.lua \
+--pgsql-host=database-aurorapostgresql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com \
+--pgsql-port=5432 \
+--pgsql-user=postgres \
+--pgsql-password=Passw0rd123 \
+--pgsql-db=sbtest \
+--db-driver=pgsql \
+--tables=10 \
+--table-size=10000 \
+--threads=8 \
+--time=120 \
+--report-interval=10 \
+run

@@ -1,0 +1,684 @@
+[ec2-user@ip-172-31-83-82 ~]$ cat history.log
+    1  mkdir fastapi
+    2  ls
+    3  cd fastapi/
+    4  ls
+    5  nano Dockerfile
+    6  nano .env
+    7  nano app.py
+    8  nano requirements.txt
+    9  nano .env
+   10  ls
+   11  nano .env
+   12  ls
+   13  docker
+   14  sudo dnf update -y
+   15  sudo dnf install docker -y
+   16  sudo systemctl start docker
+   17  sudo systemctl enable docker
+   18  sudo usermod -aG docker $USER
+   19  newgrp docker
+   20  sudo dnf install postgresql15.x86_64 postgresql15-server -y
+   21  psql --version
+   22  sudo dnf install python3-pip -y
+   23  nano .env
+   24  docker run -it --rm postgres psql -h database-1.c7ec88qoassw.us-east-1.rds.amazonaws.com -U postgres -d postgres
+   25  cd fastapi/
+   26  ls
+   27  cd .env
+   28  nano .env
+   29  sudo yum install git -y
+   30  git config --global user.name "Lam Ching Lung"
+   31  git config --global user.email "chingllam8-c@my.cityu.edu.hk"
+   32  git clone https://github.com/xvx-ctrlz/CloudGrpPj.git
+   33  ls
+   34  cd CloudGrpPj/
+   35  ls
+   36  cd ..
+   37  cd CloudGrpPj/
+   38  cd ../fastapi
+   39  cd ..
+   40  pwd
+   41  cd CloudGrpPj/
+   42  cd ..
+   43  ls
+   44  rm -rf CloudGrpPj/
+   45  ls
+   46  cd ..
+   47  git clone https://github.com/xvx-ctrlz/CloudGrpPj.git
+   48  ls
+   49  cd CloudGrpPj/
+   50  cp -r /home/ec2-user/fastapi .
+   51  ls
+   52  git add fastapi
+   53  git commit -m "Add fastapi directory to the project"
+   54  git push origin main
+   55  ls
+   56  git push origin main
+   57  cd CloudGrpPj/
+   58  ls
+   59  cd fastapi/
+   60  ls
+   61  cd ..
+   62  cd fastapi/
+   63  ll
+   64  nano .env
+   65  ls
+   66  cd ..
+   67  ls
+   68  git push origin main
+   69  history
+   70  ls
+   71  git
+   72  ls
+   73  git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
+   74  mkdir ~/.linuxbrew/bin
+   75  ln -s ../Homebrew/bin/brew ~/.linuxbrew/bin
+   76  eval $(~/.linuxbrew/bin/brew shellenv)
+   77  brew install sysbench
+   78  brew install gcc
+   79  ;s
+   80  ls
+   81  cd ..
+   82  ls
+   83  cd ..
+   84  ls
+   85  ll
+   86  cd ~
+   87  ls
+   88  ll
+   89  cd .linuxbrew/
+   90  ll;
+   91  brew install gcc
+   92  brew docter
+   93  brew doctor
+   94  sudo yum install gcc gcc-c++ make -y
+   95  brew install sysbench
+   96  cd ..
+   97  ls
+   98  cd /opt
+   99  ls
+  100  ll
+  101  cd homebrew
+  102  cd ..
+  103  ls
+  104  rm -rf ~/.linuxbrew
+  105  brew
+  106  nano ~/.bashrc
+  107  source ~/.bashrc
+  108  brew
+  109  sudo yum install -y sysbench
+  110  sudo yum -y install make automake libtool pkgconfig libaio-devel
+  111  sudo yum -y install postgresql-devel openssl-devel
+  112  ls
+  113  cd usr
+  114  ls
+  115  git clone https://github.com/akopytov/sysbench.git --branch 1.0.20
+  116  cd ..
+  117  ls
+  118  cd home/
+  119  ls
+  120  cd ec2-user/
+  121  ls
+  122  pwd
+  123  git clone https://github.com/akopytov/sysbench.git --branch 1.0.20
+  124  ls
+  125  cd sysbench/
+  126  ls
+  127  ./autogen.sh
+  128  ./configure --with-pgsql
+  129  sudo yum install -y mysql-devel
+  130  \t./configure --with-pgsql
+  131  cd ..
+  132  ls
+  133  sudo yum install -y mysql-devel
+  134  wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+  135  sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+  136  sudo yum -y update
+  137  sudo yum -y install mysql-community-devel mysql-community-client mysql-community-common
+  138  ./configure --with-pgsql --with-mysql
+  139  cd sysbench/
+  140  ls
+  141  ./configure --with-pgsql --with-mysql
+  142  ./configure
+  143  sudo yum -y install ncurses-compat-libs
+  144  ./configure
+  145  ./autogen.sh
+  146  ./configure --with-pgsql
+  147  make -j
+  148  make
+  149   sudo yum -y install mariadb105-devel
+  150  ./configure --with-pgsql
+  151  make -j
+  152  make install
+  153  clear
+  154  make install
+  155  sudo make install
+  156  sysbench
+  157  sysbench --version
+  158  ls
+  159  rm mysql-community-release-el7-5.noarch.rpm
+  160  ls
+  161  cd sysbench/
+  162  ls
+  163  docker run -it --rm postgres psql -h database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com -U postgres -d postgres
+  164  sysbench /usr/local/share/sysbench/oltp_read_write.lua --db-driver=pgsql --pgsql-host=database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com --pgsql-port=5432 --pgsql-user=postgres --pgsql-password=Passw0rd123 --pgsql-db=sbtest --tables=2 --table-size=2000000 --threads=8 --time=120 --report-interval=10 prepare
+  165  sysbench /usr/local/share/sysbench/oltp_read_write.lua --db-driver=pgsql --pgsql-host=database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com --pgsql-port=5432 --pgsql-user=postgres --pgsql-password=Passw0rd123 --pgsql-db=sbtest --tables=2 --table-size=2000000 --threads=8 --time=120 --report-interval=10 run
+  166  mysql -h database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com -u admin -p -P 3306
+  167  history
+  168  docker run -it --rm mysql mysql -h database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com -u admin -p -P 3306
+  169  sysbench /usr/share/sysbench/oltp_read_write.lua --db-driver=mysql --mysql-host=<mysql-host> --mysql-port=3306 --mysql-user=admin --mysql-password=Passw0rd123 --mysql-db=sbtest --tables=10 --table-size=10000 --threads=8 --time=120 --report-interval=10 prepare
+  170  sysbench /usr/share/sysbench/oltp_write_only.lua --mysql-host=database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com --mysql-port=3306 --mysql-user=admin --mysql-password=Passw0rd123 --mysql-db=sbtest --db-driver=mysql --tables=10 --table_size=10000 --threads=8 --time=120 --report-interval=10 prepare
+  171  sysbench --version
+  172  ls
+  173  find /usr -name "sysbench"
+  174  sudo find /usr -name "sysbench"
+  175  sudo find / -name "*.lua" 2>/dev/null
+  176  sysbench /usr/local/share/sysbench/oltp_read_write.lua --mysql-host=database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com --mysql-port=3306 --mysql-user=admin --mysql-password=Passw0rd123 --mysql-db=sbtest --db-driver=mysql --tables=10 --table_size=10000 --threads=8 --time=120 --report-interval=10 prepare
+  177  sysbench /usr/local/share/sysbench/oltp_read_write.lua --mysql-host=database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com --mysql-port=3306 --mysql-user=admin --mysql-password=Passw0rd123 --mysql-db=sbtest --db-driver=mysql --tables=10 --table_size=10000 --threads=8 --time=120 --report-interval=10 run
+  178  docker run -it --rm postgres psql -h database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com -U postgres -d postgres
+  179  ls
+  180  sysbench /usr/local/share/sysbench/oltp_read_write.lua --db-driver=pgsql --pgsql-host=database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com --pgsql-port=5432 --pgsql-user=postgres --pgsql-password=Passw0rd123 --pgsql-db=sbtest --tables=10 --table-size=10000 --threads=8 --time=120 --report-interval=10 prepare
+  181  docker run -it --rm postgres psql -h database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com -U postgres -d postgres
+  182  sysbench /usr/local/share/sysbench/oltp_read_write.lua --db-driver=pgsql --pgsql-host=database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com --pgsql-port=5432 --pgsql-user=postgres --pgsql-password=Passw0rd123 --pgsql-db=sbtest --tables=10 --table-size=10000 --threads=8 --time=120 --report-interval=10 prepare
+  183  sysbench /usr/local/share/sysbench/oltp_read_write.lua --db-driver=pgsql --pgsql-host=database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com --pgsql-port=5432 --pgsql-user=postgres --pgsql-password=Passw0rd123 --pgsql-db=sbtest --tables=10 --table-size=10000 --threads=8 --time=120 --report-interval=10 run
+  184  docker run -it --rm postgres psql -h database-aurorapostgresql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com -U postgres -d postgres
+  185  sysbench /usr/local/share/sysbench/oltp_read_write.lua --pgsql-host=database-aurorapostgresql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com --pgsql-port=5432 --pgsql-user=postgres --pgsql-password=Passw0rd123 --pgsql-db=sbtest --db-driver=pgsql --tables=10 --table-size=10000 --threads=8 --time=120 --report-interval=10 prepare
+  186  sysbench /usr/local/share/sysbench/oltp_read_write.lua --pgsql-host=database-aurorapostgresql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com --pgsql-port=5432 --pgsql-user=postgres --pgsql-password=Passw0rd123 --pgsql-db=sbtest --db-driver=pgsql --tables=10 --table-size=10000 --threads=8 --time=120 --report-interval=10 RUN
+  187  sysbench /usr/local/share/sysbench/oltp_read_write.lua --pgsql-host=database-aurorapostgresql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com --pgsql-port=5432 --pgsql-user=postgres --pgsql-password=Passw0rd123 --pgsql-db=sbtest --db-driver=pgsql --tables=10 --table-size=10000 --threads=8 --time=120 --report-interval=10 run
+  188  docker run -it --rm postgres psql -h database-aurorapostgresql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com -U postgres -d postgres
+  189  sysbench /usr/local/share/sysbench/oltp_read_write.lua --pgsql-host=database-aurorapostgresql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com --pgsql-port=5432 --pgsql-user=postgres --pgsql-password=Passw0rd123 --pgsql-db=sbtest --db-driver=pgsql --tables=10 --table-size=10000 --threads=8 --time=120 --report-interval=10 run
+  190  docker run -it --rm mysql mysql -h database-auroramysql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com -u admin -p -P 3306
+  191  sysbench /usr/local/share/sysbench/oltp_read_write.lua --mysql-host=database-auroramysql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com --mysql-port=3306 --mysql-user=admin --mysql-password=Passw0rd123 --mysql-db=sbtest --db-driver=mysql --tables=10 --table_size=10000 --threads=8 --time=120 --report-interval=10 prepare
+  192  sysbench /usr/local/share/sysbench/oltp_read_write.lua --mysql-host=database-auroramysql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com --mysql-port=3306 --mysql-user=admin --mysql-password=Passw0rd123 --mysql-db=sbtest --db-driver=mysql --tables=10 --table_size=10000 --threads=8 --time=120 --report-interval=10 run
+  193  wget https://nchc.dl.sourceforge.net/project/hammerora/HammerDB/HammerDB-2.23/HammerDB-2.23-Linux-x86-64-Install
+  194  ls
+  195  wget https://github.com/TPC-Council/HammerDB/releases/download/v4.10/HammerDB-4.10-Linux.tar.gz
+  196  ls
+  197  tar -xzvf HammerDB-4.10-Linux.tar.gz
+  198  ls
+  199  cd HammerDB-4.10/
+  200  ;s
+  201  ls
+  202  ./hammerdbcli
+  203  ll
+  204  cd config/
+  205  ks
+  206  ls
+  207  nano mysql.xml
+  208  cd ..
+  209  ./hammerdb
+  210  ll
+  211  ./hammerdb
+  212  sudo yum install libXft
+  213  ./hammerdb
+  214  echo $DISPLAY
+  215  cd /etc/ssh
+  216  ls
+  217  ll
+  218  nano ssh_config
+  219  sudo nano ssh_config
+  220  cd /home/ec2-user/HammerDB-4.10/
+  221  ./hammerdb
+  222  sudo systemctl restart sshd
+  223  ./hammerdb
+  224  sudo yum install xeyes
+  225  sudo yum install xorg-x11-xauth
+  226  ./hammerdb
+  227   sudo yum install xclock xterm
+  228  sudo yum install xorg-x11-apps
+  229  xeyes
+  230  sudo yum install xterm
+  231  sudo yum install xorg-x11-apps
+  232  sudo yum install xauth
+  233  kls
+  234  ls
+  235  echo xauth
+  236  xauth
+  237  ./hammerdb
+  238  ll
+  239  nano hammerdb
+  240  ./hammerdb
+  241  ls
+  242  cd HammerDB-4.10/
+  243  ls
+  244  nano hammerdb
+  245  ./hammerdb
+  246  cd HammerDB-4.10/
+  247  ls
+  248  ./hammerdb
+  249  cd /etc/ssh
+  250  ls
+  251  cd sshd_config.d/
+  252  sudo nano sshd_config
+  253  cd ..
+  254  ls
+  255  cd ..
+  256  ls
+  257  cd home/ec2-user/HammerDB-4.10/
+  258  ls
+  259  ./hammerdb
+  260  sudo yum install xorg-x11-xauth xorg-x11-fonts-* xorg-x11-utils -y
+  261  ./hammerdb
+  262  xeyes
+  263  cd ..
+  264  xeyes
+  265  xclock
+  266  ldd ./hammerdb
+  267  cd HammerDB-4.10/
+  268  ldd ./hammerdb
+  269  ./hammerdb --debug
+  270  cat ./hammerdb
+  271  sudo yum install tcl tk tcl-devel tk-deve
+  272  sudo yum install tcl tk tcl-devel tk-devel
+  273  echo $DISPLAY
+  274  ./hammerdb
+  275  chmod +x ./hammerdb
+  276  which wish8.6
+  277  ./hammerdb
+  278  nano ./hammerdb
+  279  ./hammerdb
+  280  tclsh
+  281  find /usr -name init.tcl
+  282  sudo find /usr -name init.tcl
+  283  export TCLLIBPATH="/usr/share/tcl8.6"
+  284  export TCL_LIBRARY="/usr/share/tcl8.6"
+  285  source ~/.bashrc  # or source ~/.bash_profile if that's what you edited
+  286  nano ./hammerdb
+  287  ./hammerdb
+  288  echo "TCLLIBPATH: $TCLLIBPATH"
+  289  echo "TCL_LIBRARY: $TCL_LIBRARY"
+  290  apt-get
+  291  sudo apt-get
+  292  ls
+  293  ll
+  294  nano mysql_benchmark.tcl
+  295  chmod +x mysql_benchmark.tcl
+  296  nano mysql_benchmark.tcl
+  297  docker run -it --rm mysql mysql -h database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com -u admin -p -P 3306
+  298  ./hammerdbcli auto mysql_benchmark.tcl
+  299  nano mysql_benchmark.tcl
+  300  rm mysql_benchmark.tcl
+  301  nano mysql_benchmark.tcl
+  302  ./hammerdbcli auto mysql_benchmark.tcl
+  303  ll
+  304  rm mysql_benchmark.tcl
+  305  nano mysql_benchmark.tcl
+  306  pwd
+  307  sudo find / -name hammerdbcli.tcl 2>/dev/null
+  308  env | grep HAMMERDB
+  309  locate hammerdbcli.tcl
+  310  ls /usr/local/hammerdb/
+  311  cd /usr
+  312  ls
+  313  cd local
+  314  ls
+  315  cd ..
+  316  ls
+  317  cd ..
+  318  ls
+  319  ls /opt
+  320  ;s
+  321  cd
+  322  cd home
+  323  ls
+  324  cd HammerDB-4.10/
+  325  ls
+  326  cd lin
+  327  cd lib
+  328  ls
+  329  cd ..
+  330  ls
+  331  pwd
+  332  source ./hammerdbcli.tcl
+  333  ls
+  334  pwd
+  335  nano mysql_benchmark.tcl
+  336  ll
+  337  ls
+  338  cd HammerDB-4.10/
+  339  ls
+  340  ./hammerdbcli
+  341  sudo find / -name libmysqlclient.so.21
+  342  ls
+  343  cd lib/mysqltcl3.052/
+  344  ls
+  345  nano libmysqltcl3.052.so
+  346  cd ..
+  347  ls
+  348  sudo yum install mysql-community-client
+  349  sudo find / -name libmysqlclient.so.21
+  350  cd ..
+  351  sudo find / -name libmysqlclient.so.21
+  352  cd HammerDB-4.10/
+  353  ls
+  354  cd lib/mysqltcl3.052/
+  355  ls
+  356  sudo find / -name libmysqlclient.so.21
+  357  export LD_LIBRARY_PATH=/path/to/libmysqlclient.so.21_directory:$LD_LIBRARY_PATH
+  358  echo 'export LD_LIBRARY_PATH=/path/to/libmysqlclient.so.21_directory:$LD_LIBRARY_PATH' >> ~/.bashrc
+  359  ldd /home/ec2-user/HammerDB-4.10/lib/mysqltcl3.052/libmysqltcl3.052.so
+  360  yum provides */libmysqlclient.so.21
+  361  cd ..
+  362  ls
+  363  cd mysqltcl3.052/
+  364  ll
+  365  cd ..
+  366  ls
+  367  wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+  368  sudo rpm -Uvh mysql80-community-release-el7-3.noarch.rpm
+  369  wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+  370  ll
+  371  rm mysql80-community-release-el7-3.noarch.rpm.1
+  372  sudo rpm -Uvh mysql80-community-release-el7-3.noarch.rpm
+  373  sudo yum remove mysql-community-release
+  374  \
+  375  sudo rpm -Uvh mysql80-community-release-el7-3.noarch.rpm
+  376  sudo yum install mysql-community-client
+  377  sudo find / -type f -name 'libmysqlclient.so.21'
+  378  ls
+  379  ll
+  380  yum list available | grep mysql
+  381  ll
+  382  cd HammerDB-4.10/
+  383  ls
+  384  ./hammerdbcli
+  385  ls
+  386  cd lib/
+  387  ls
+  388  cd mysqltcl3.052/
+  389  ls
+  390  sudo yum install mysql-community-client
+  391  hisory
+  392  history
+  393  ls
+  394  cd /opt
+  395  ls
+  396  ll
+  397  cd ..
+  398  ll
+  399  cd lib/
+  400  ls
+  401  cd rpm
+  402  ls
+  403  cd ..
+  404  ls
+  405  cd ..
+  406  l
+  407  sll
+  408  ll
+  409  cd usr/
+  410  ls
+  411  cd lib
+  412  ls
+  413  ldd libmysqltcl3.052.so
+  414  cd ..
+  415  ls
+  416  cd ..
+  417  ls
+  418  cd home/ec2-user/HammerDB-4.10/
+  419  ls
+  420  cd lib/
+  421  l
+  422  ls
+  423  cd mysqltcl3.052/
+  424  ls
+  425  lld libmysqltcl3.052.so
+  426  ldd libmysqltcl3.052.so
+  427  sudo yum repolist enabled | grep mysql
+  428  sudo yum install mysql-community-client
+  429  sudo find / -type f -name 'libmysqlclient.so.21'
+  430  sudo yum update
+  431  find / -name libmysqlclient.so.*
+  432  sudo find / -name libmysqlclient.so.*
+  433  sudo yum install mysql-community-client
+  434  sudo yum clean all
+  435  sudo yum update
+  436  sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+  437  sudo rpm -q gpg-pubkey --qf '%{NAME}-%{VERSION}-%{RELEASE}\t%{SUMMARY}\n'
+  438  sudo yum update
+  439  sudo yum install libmysqlclient-dev
+  440  sudo -i
+  441  ls
+  442  sudo ls
+  443  cd ..
+  444  ls
+  445  cd home/ec2-user/
+  446  ls
+  447  sudo rpm -e mysql80-community-release-el7-3.noarch
+  448  ll
+  449  rm mysql80-community-release-el7-3.noarch.rpm
+  450  sudo yum install mysql-community-release
+  451  history
+  452  ls
+  453  ./hammerdbcli
+  454  sudo find / -name libmysqlclient.so.21
+  455  sudo find / -name libmysqlclient.so.20
+  456  cd ..
+  457  ls
+  458  cd /opt/
+  459  ls
+  460  ll
+  461  sudo -i
+  462  docker run -it --rm mysql mysql -h database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com -u admin -p -P 3306
+  463  cd HammerDB-4.10/
+  464  ./hammerdb
+  465  find / -name tcl8.6
+  466  sudo
+  467  sudo find / -name tcl8.6
+  468  ./hammerdb
+  469  export TCL_LIBRARY=/usr/share/tcl8.6
+  470  ./hammerdb
+  471  echo 'export TCL_LIBRARY=/usr/share/tcl8.6' >> ~/.bashrc
+  472  source ~/.bashrc
+  473  ./hammerdb
+  474  wget https://prdownloads.sourceforge.net/tcl/tcl8.6.10-src.tar.gz
+  475  ls
+  476  rm tcl8.6.10-src.tar.gz
+  477  cd ..
+  478  wget https://prdownloads.sourceforge.net/tcl/tcl8.6.10-src.tar.gz
+  479  tar -xzf tcl8.6.10-src.tar.gz
+  480  ll
+  481  cd tcl8.6.10/
+  482  ls
+  483  cd unix/
+  484  ls
+  485  ./configure --prefix=/usr/local
+  486  make
+  487  sudo make install
+  488  export TCL_LIBRARY=/usr/local/lib/tcl8.6
+  489  echo 'export TCL_LIBRARY=/usr/local/lib/tcl8.6' >> ~/.bashrc
+  490  source ~/.bashrc
+  491  tclsh
+  492  q
+  493  cd ..
+  494  ls
+  495  cd .
+  496  cd ..
+  497  ls
+  498  cd HammerDB-4.10/
+  499  ./hammerdb
+  500  sudo nano ./hammerdb
+  501  ./hammerdb
+  502  sudo nano ./hammerdb
+  503  ./hammerdb
+  504  sudo nano ./hammerdb
+  505  export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+  506  export TCLLIBPATH="/usr/local/lib/tcl8.6"
+  507  export TCL_LIBRARY="/usr/local/lib/tcl8.6"
+  508  echo $LD_LIBRARY_PATH
+  509  echo $TCLLIBPATH
+  510  echo $TCL_LIBRARY
+  511  ./hammerdb
+  512  ./hammerdbcli
+  513  ll
+  514  ./hammerdb
+  515  sudo nano hammerdb
+  516  ./hammerdb
+  517  sudo nano hammerdb
+  518  ./hammerdbcli
+  519  ll
+  520  cd cong
+  521  cd config/
+  522  ls
+  523  nano mysql.xml
+  524  restart
+  525  sudo reboot
+  526  lws
+  527  ls
+  528  cd H
+  529  cd HammerDB-4.10/
+  530  ls
+  531  ./hammerdb
+  532  ./hammerdbcli
+  533  ls
+  534  cd ..
+  535  l;s
+  536  ls
+  537  wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+  538  ls
+  539  [root@master ~]# rpm -ivh mysql-community-release-el7-5.noarch.rpm
+  540   rpm -ivh mysql-community-release-el7-5.noarch.rpm
+  541  sudo -i
+  542  ll
+  543  ./hammerdbcli
+  544  vim ~/.bashrc
+  545  nano ~/.bashrc
+  546  ./hammerdbcli
+  547  sudo yum install mysql-community-client
+  548  find / -name libmysqlclient.so.21
+  549  sudo find / -name libmysqlclient.so.21
+  550  sudo yum list installed | grep mysql
+  551  ls -l /usr/lib64/mysql | grep libmysqlclient
+  552  ldconfig -p | grep libmysqlclient
+  553  sudo find / -name libmysqlclient.so.18
+  554  sudo yum remove mysql-community-*
+  555  cat /etc/os-release
+  556  cd ..
+  557  lks
+  558  ls
+  559  rm mysql-community-release-el7-5.noarch.rpm
+  560  wget https://dev.mysql.com/get/mysql80-community-release-fc39-2.noarch.rpm
+  561  sudo rpm -Uvh mysql80-community-release-fc39-2.noarch.rpm
+  562  /etc/yum.repos.d/mysql-community*
+  563  sudo /etc/yum.repos.d/mysql-community*
+  564  yum install mysql-server
+  565  sudo yum install mysql-server
+  566  sudo yum install mysql-devel
+  567  sudo yum install mysql-community-server
+  568  sudo /etc/yum.repos.d/mysql-community*
+  569  cd ..
+  570  ls
+  571  cd ..
+  572  cd /etc
+  573  ls
+  574  cd yum.repos.d/
+  575  ll
+  576  sudo yum install mysql-server
+  577  sudo yum install mysql-devel
+  578  sudo nano /etc/yum.repos.d/mysql-community.repo
+  579  ll
+  580  nano mysql-community-source.repo
+  581  sudo nano /etc/yum.repos.d/mysql-community.repo
+  582  nano mysql-community-source.repo
+  583  sudo nano mysql-community-source.repo
+  584  sudo nano mysql-community-debuginfo.repo
+  585  sudo yum clean all
+  586  sudo yum repolist
+  587  sudo yum install mysql-server
+  588  sudo yum install mysql-devel
+  589  sudo yum install mariadb-server
+  590  sudo yum install mariadb-devel
+  591  sudo yum install mysql-community-server
+  592  find / -name libmysqlclient.so.21
+  593  sudo
+  594  sudo find / -name libmysqlclient.so.21
+  595  sudo find / -name libmysqlclient.so.18
+  596  sudo find / -name libmysqlclient.so.20
+  597  sudo find / -name libmysqlclient.so.19
+  598  sudo find / -name libmysqlclient.so.22
+  599  sudo find / -name libmysqlclient.so.23
+  600  sudo find / -name libmysqlclient.so.24
+  601  sudo yum remove mysql-community-*
+  602  history
+  603  cd /
+  604  ls
+  605  sudo yum remove mysql-community-*
+  606  sudo yum clean all
+  607  cd home/ec2-user/
+  608  ls
+  609  rm mysql80-community-release-fc39-2.noarch.rpm
+  610  wget https://dev.mysql.com/downloads/repo/get/mysql80-community-release-el9-5.noarch.rpm
+  611  sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
+  612  ls
+  613  sudo dnf install mysql80-community-release-el9-1.noarch.rpm -y
+  614  sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
+  615  sudo dnf install mysql-community-client -y
+  616  sudo find / -name libmysqlclient.so.21
+  617  sudo find / -name libmysqlclient.so.20
+  618  sudo find / -name libmysqlclient.so.18
+  619  sudo find / -name libmysqlclient.so.19
+  620  sudo dnf install mysql-server -y
+  621  sudo dnf install mysql-devel -y
+  622  cd /etc/yum.repos.d/
+  623  ll
+  624  nano mysql-community
+  625  sudo nano mysql-community
+  626  sudo nano mysql-community.repo
+  627  sudo nano mysql-community.repo.rpmnew
+  628  sudo mv /etc/yum.repos.d/mysql-community.repo.rpmnew /etc/yum.repos.d/mysql-community.repo
+  629  sudo mv /etc/yum.repos.d/mysql-community-source.repo.rpmnew /etc/yum.repos.d/mysql-community-source.repo
+  630  sudo mv /etc/yum.repos.d/mysql-community-debuginfo.repo.rpmnew /etc/yum.repos.d/mysql-community-debuginfo.repo
+  631  ll
+  632  nano mysql-community.repo
+  633  sudo yum clean all
+  634  sudo yum makecache
+  635  sudo yum install mysql-server
+  636  sudo yum install mysql-devel
+  637  sudo find / -name libmysqlclient.so.21
+  638  export LD_LIBRARY_PATH=/usr/lib64/mysql:$LD_LIBRARY_PATH
+  639  cd /home/ec2-user/HammerDB-4.10/
+  640  ./hammerdbcli
+  641  ll
+  642  cd config/
+  643  ls
+  644  nano mysql.xml
+  645  cd ..
+  646  ls
+  647  ./hammerdbws
+  648  ls
+  649  cd HammerDB-4.10/
+  650  ./hammerdbcli
+  651  ./hammerdb
+  652  ./hammerdbcli
+  653  nano mysql_benchmark.tcl
+  654  ./hammerdbcli
+  655  nano mysql_benchmark.tcl
+  656  ./hammerdbcli
+  657  nano mysql_benchmark.tcl
+  658  ./hammerdbcli
+  659  nano mysql_benchmark.tcl
+  660  ./hammerdbcli
+  661  nano mysql_benchmark.tcl
+  662  ./hammerdbcli
+  663  cat mysql_benchmark.tcl
+  664  ./hammerdbcli
+  665  docker run -it --rm mysql mysql -h database-mysql.c7ec88qoassw.us-east-1c.rds.amazonaws.com -u admin -p -P 3306
+  666  docker run -it --rm mysql mysql -h database-mysql.c7ec88qoassw.us-east-1a.rds.amazonaws.com -u admin -p -P 3306
+  667  docker run -it --rm mysql mysql -h database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com -u admin -p -P 3306
+  668  cd HammerDB-4.10/
+  669  ./hammerdbws
+  670  docker run -it --rm mysql mysql -h database-mysql.c7ec88qoassw.us-east-1.rds.amazonaws.com -u admin -p -P 3306
+  671  exit
+  672  docker run -it --rm postgres psql -h database-postgresql.c7ec88qoassw.us-east-1.rds.amazonaws.com -U postgres -d postgres
+  673  docker run -it --rm postgres psql -h database-aurorapostgresql-instance-1.c7ec88qoassw.us-east-1.rds.amazonaws.com -U postgres -d postgres
+  674  CD h
+  675  cd HammerDB-4.10/
+  676  pwd
+  677  cd ..
+  678  sysbench
+  679  sudo yum -y install mariadb105-devel
+  680  sysbench --version
+  681  ll
+  682  history >> history.log
+[ec2-user@ip-172-31-83-82 ~]$
